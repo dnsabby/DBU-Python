@@ -1,24 +1,26 @@
-# Objective: Apply data science concepts on a dataset of your choice.
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 
-# Tasks:
-    # Acquire, clean, and preprocess data.
-    # Perform EDA and visualize key insights.
-	# Build and evaluate a machine learning model.
+# Set random seed for reproducibility
+np.random.seed(42)
 
-# Requirements:
-    # Work on this as a group (Same team as the previous GIT exercise).
-    # Use a dataset that is not used in the class.
-    # Use at least 3 different visualization techniques.
-    # Use at least 1 different machine learning algorithms.
-    # Use at least 2 different evaluation metrics.
-    # Use at least 2 different preprocessing techniques.
+# Define dataset size
+# data_size = ?
 
-# Submission Timeline:
-    # Submit the code and a report in 3 weeks.
-    # The report should include:
-        # Introduction to the dataset.
-        # Data cleaning and preprocessing steps.
-        # EDA and key insights.
-        # Machine learning model building and evaluation.
-        # Conclusion.
-        # References (if any).
+# Exercise 5: Generate a sample dataset and display a pairplot
+# Create a sample dataset with numpy np.random.randn(), np.random.rand(), np.random.randint()
+data = pd.DataFrame({
+    'Variable_A': [],
+    'Variable_B': [],
+    'Variable_C': [],
+    'Variable_D': [],
+})
+
+# Create a pairplot of the dataset
+
+# Show the plot
+
+# Optionally, save the plot as a PNG file
+# plt.savefig('pairplot_output.png')
