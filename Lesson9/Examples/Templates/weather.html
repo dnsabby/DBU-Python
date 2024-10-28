@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head><title>Weather Dashboard</title></head>
+<body>
+    <h1>Weather Dashboard</h1>
+    <form method="POST" action="/">
+        <input type="text" name="city" placeholder="Enter city name" required>
+        <button type="submit">Get Weather</button>
+    </form>
+    {% if weather_data %}
+        {% if weather_data.error %}
+            <p>{{ weather_data.error }}</p>
+        {% else %}
+            <p>Temperature: {{ weather_data.temperature }}°C</p>
+            <p>Wind Speed: {{ weather_data.windspeed }} km/h</p>
+            <p>Weather Status: {{ weather_data.weathercode }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

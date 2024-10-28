@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f4f8; color: #333; display: flex; align-items: center; flex-direction: column; }
+        h1 { color: #4a90e2; }
+        form { margin: 20px 0; }
+        input[type="text"] { padding: 10px; border: 1px solid #ddd; border-radius: 5px; width: 250px; }
+        button { padding: 10px 20px; background-color: #4a90e2; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+        .error { color: red; }
+        .graph-container { margin-top: 20px; }
+        img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>Weather Dashboard</h1>
+    <form method="POST" action="/">
+        <input type="text" name="city" placeholder="Enter city name" required>
+        <button type="submit">Get Weather</button>
+    </form>
+
+    {% if weather_data %}
+        {% if weather_data.error %}
+            <p class="error">{{ weather_data.error }}</p>
+        {% else %}
+            <h2>24-Hour Temperature Forecast</h2>
+            <div class="graph-container">
+                {% if graph_filename %}
+                    <img src="{{ url_for('static', filename='temperature_plot.png') }}" alt="Temperature Forecast Graph">
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
