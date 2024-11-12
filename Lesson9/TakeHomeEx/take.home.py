@@ -42,7 +42,7 @@ def weather():
             # Fetch weather data with additional attributes
             weather_response = requests.get(
                 f'https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={
-                    longitude}&hourly=temperature_2m,windspeed_10m,precipitation&timezone=auto'
+                    longitude}&hourly=temperature_2m,humidity_2m,windspeed_10m,precipitation&timezone=auto'
             )
 
             print("Weather response:", weather_response.status_code,
